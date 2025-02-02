@@ -3,4 +3,4 @@ This guide provides steps to configure MySQL with SSL for secure connections. It
 
 # Start
 
-![Logo](https://github.com/waiyanphyoeoo/mysql-ssl-connection/blob/39b0e37f6ab3b47de7b6f270ca0b1d01932ab202/photo_2025-01-29_11-38-00.jpg)
+![Infra](https://github.com/waiyanphyoeoo/mysql-ssl-connection/blob/219d0ba2313097f3b05a1dc8b4db49f8ee646784/mysql-ssl-connection.png)
