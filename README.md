@@ -26,7 +26,7 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
    - [Generate Server Key and Certificate](#generate-server-key-and-certificate)  
    - [Generate Client Key and Certificate](#generate-client-key-and-certificate)  
    - [Set Correct Permissions](#set-correct-permissions)  
-4. [Copy SSL Certificates from MySQL Server to MySQL Client Server-1&2](#copy-ssl-certificates-from-mysql-server-to-mysql-client-server-1&2)  
+4. [Copy SSL Certificates from MySQL Server to MySQL Client Server-1 & 2](#copy-ssl-certificates-from-mysql-server-to-mysql-client-server-1-and-2) 
 5. [Edit MySQL Configuration](#edit-mysql-configuration)  
 6. [Restart MySQL](#restart-mysql)  
 7. [Verify SSL Status](#verify-ssl-status)  
@@ -87,7 +87,7 @@ sudo chown mysql:mysql /etc/mysql/ssl/*.pem
 chmod 600 *.pem
 ```
 
-## Copy SSL Certificates from MySQL Server to MySQL Client Server-1&2 
+## Copy SSL Certificates from MySQL Server to MySQL Client Server-1 and 2
 Transfer the SSL certificates to the MySQL server:
 ```
 scp /etc/mysql/ssl/ca-cert.pem ubuntu@203.0.113.22:/etc/mysql/ssl/
