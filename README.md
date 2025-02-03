@@ -40,3 +40,5 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
 16. [Test MySQL Connection with SSL](#test-mysql-connection-with-ssl)  
 17. [Grant Privileges for User](#grant-privileges-for-user)  
 
+#check-openssl-version
+Checking OPEN SSl
