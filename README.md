@@ -27,7 +27,7 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
    - [Generate Client Key and Certificate](#generate-client-key-and-certificate)  
    - [Set Correct Permissions](#set-correct-permissions)  
 4. [Copy SSL Certificates from MySQL Server to MySQL Client Server-1 & 2](#copy-ssl-certificates-from-mysql-server-to-mysql-client-server-1-and-2) 
-5. [Edit MySQL Configuration](#edit-mysql-configuration)  
+5. [Edit MySQL Configuration in MYSQL Server](#edit-mysql-configuration-in-mysql-server)  
 6. [Restart MySQL](#restart-mysql)  
 7. [Verify SSL Status](#verify-ssl-status)  
 8. [Create New User with SSL Requirements](#create-new-user-with-ssl-requirements)  
@@ -90,12 +90,12 @@ chmod 600 *.pem
 ## Copy SSL Certificates from MySQL Server to MySQL Client Server-1 and 2
 Transfer the SSL certificates to the MySQL server:
 ```
-scp /etc/mysql/ssl/ca-cert.pem ubuntu@203.0.113.22:/etc/mysql/ssl/
-scp /etc/mysql/ssl/client-cert.pem root@203.0.113.22:/etc/mysql/ssl/
-scp /etc/mysql/ssl/client-key.pem root@203.0.113.22:/etc/mysql/ssl/
+scp /etc/mysql/ssl/ca-cert.pem ubuntu@MySQL Client Server 1 and 2 IP:/etc/mysql/ssl/
+scp /etc/mysql/ssl/client-cert.pem ubuntu@MySQL Client Server 1 and 2 IP:/etc/mysql/ssl/
+scp /etc/mysql/ssl/client-key.pem ubuntu@MySQL Client Server 1 and 2 IP:/etc/mysql/ssl/
 ```
 
-## Edit MySQL Configuration  
+## Edit MySQL Configuration in MySQL Server 
 Edit the MySQL configuration file to enable SSL:
 ```
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
