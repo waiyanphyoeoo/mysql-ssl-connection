@@ -21,7 +21,7 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
 
 1. [Check OpenSSL Version](#check-openssl-version)  
 2. [MySQL Server Site](#mysql-server-site)  
-3. [Generate SSL Certificates](#generate-ssl-certificates)  
+3. [Generate SSL Certificates in MySQL Server](#generate-ssl-certificates-in-mysql-server)  
    - [Generate CA Certificate](#generate-ca-certificate)  
    - [Generate Server Key and Certificate](#generate-server-key-and-certificate)  
    - [Generate Client Key and Certificate](#generate-client-key-and-certificate)  
@@ -53,7 +53,7 @@ Check if SSL is enabled in MySQL by running:
 SHOW VARIABLES LIKE '%ssl%';
 ```
 
-## Generate SSL Certificates  
+## Generate SSL Certificates in MySQL Server 
 
 ### Generate CA Certificate  
 Generate the Certificate Authority (CA) certificate:
@@ -90,7 +90,7 @@ chmod 600 *.pem
 ## Copy SSL Certificates to Server  
 Transfer the SSL certificates to the MySQL server:
 ```
-scp /etc/mysql/ssl/ca-cert.pem root@203.0.113.22:/etc/mysql/ssl/
+scp /etc/mysql/ssl/ca-cert.pem ubuntu@203.0.113.22:/etc/mysql/ssl/
 scp /etc/mysql/ssl/client-cert.pem root@203.0.113.22:/etc/mysql/ssl/
 scp /etc/mysql/ssl/client-key.pem root@203.0.113.22:/etc/mysql/ssl/
 ```
