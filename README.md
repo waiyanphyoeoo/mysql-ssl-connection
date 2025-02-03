@@ -42,10 +42,4 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
 
 ## Check OpenSSL Version  
 To check your OpenSSL version, run:  
-```sh
-openssl version
-
-To verify if SSL is enabled in your MySQL server, run the following SQL command:
-
-```sql
-SHOW VARIABLES LIKE '%ssl%';
+`#check-openssl-version`
