@@ -30,7 +30,7 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
 5. [Edit MySQL Configuration in MYSQL Server](#edit-mysql-configuration-in-mysql-server)  
 6. [Restart MySQL](#restart-mysql)  
 7. [Verify SSL Status](#verify-ssl-status)  
-8. [Create New User with SSL Requirements](#create-new-user-with-ssl-requirements)  
+8. [Create New User with IP in MySQL](#create-new-user-with-ip-in-mysql)  
 9. [Enforce SSL on User](#enforce-ssl-on-user)  
 10. [Check SSL Requirement for User](#check-ssl-requirement-for-user)  
 11. [Allow MySQL Port through UFW](#allow-mysql-port-through-ufw)  
