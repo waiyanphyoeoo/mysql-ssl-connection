@@ -33,9 +33,9 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
 8. [Create New User with IP in MySQL](#create-new-user-with-ip-in-mysql)  
 9. [Enforce SSL on User](#enforce-ssl-on-user)  
 10. [Check SSL Requirement for User](#check-ssl-requirement-for-user)  
-11. [Allow MySQL Port through UFW](#allow-mysql-port-through-ufw)  
+11. [Allow MySQL Port through UFW in MySQL Server](#allow-mysql-port-through-ufw-in-mysql-server)  
 12. [Check Active Connections with SSL](#check-active-connections-with-ssl)  
-13. [Install mysqlclient for Python](#install-mysqlclient-for-python)  
+13. [Install mysqlclient in MySQL Client Server 1 and 2](#install-mysqlclient-in-mysql-client-server-1-and-2)  
 14. [Django Database Configuration](#django-database-configuration)  
 15. [Set Permissions for SSL Certificates](#set-permissions-for-ssl-certificates)  
 16. [Test MySQL Connection with SSL](#test-mysql-connection-with-ssl)  
@@ -144,7 +144,7 @@ Enforce SSL for the user:
 ALTER USER 'username-1'@'MySQL Client Server 1 IP' REQUIRE SSL;
 ```
 ```
-ALTER USER 'username-1'@'MySQL Client Server 1 IP' REQUIRE SSL;
+ALTER USER 'username-2'@'MySQL Client Server 2 IP' REQUIRE SSL;
 ```
 
 ## Check SSL Requirement for User  
@@ -155,10 +155,13 @@ FROM mysql.user
 WHERE ssl_type = 'ANY' OR ssl_type != '';
 ```
 
-## Allow MySQL Port through UFW  
+## Allow MySQL Port through UFW in MySQL Server 
 Allow MySQL traffic through the firewall by running:
 ```
-sudo ufw allow from <client_server_ip> to any port 3306
+sudo ufw allow from <MySQL Client Server 1 IP> to any port 3306
+```
+```
+sudo ufw allow from <MySQL Client Server 2 IP> to any port 3306
 ```
 
 ## Check Active Connections with SSL  
@@ -167,7 +170,7 @@ To check the active connections using SSL, run:
 SHOW PROCESSLIST;
 ```
 
-## Install mysqlclient for Python  
+## Install mysqlclient in MySQL Client Server 1 and 2 
 Install the MySQL client for Python to connect using SSL:
 ```
 pip install mysqlclient
@@ -180,9 +183,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'database_name',
-        'USER': 'username',
+        'USER': 'username-1',
         'PASSWORD': 'password',
-        'HOST': '203.0.113.22',  # MySQL server's public IP
+        'HOST': 'MySQL Server IP',  # MySQL server's public IP
         'PORT': '3306',  # Default MySQL port
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
@@ -207,7 +210,10 @@ chmod 600 /etc/mysql/ssl/*.pem
 ## Test MySQL Connection with SSL  
 Test the MySQL connection to the server using SSL:
 ```
-mysql -h 203.0.113.22 -u export-server -p --ssl-mode=VERIFY_CA --ssl-ca=/etc/mysql/ssl/ca-cert.pem
+mysql -h MySQL Server IP -u username-1 -p --ssl-mode=VERIFY_CA --ssl-ca=/etc/mysql/ssl/ca-cert.pem
+```
+Test SSL Connection
+```
 SHOW STATUS LIKE 'Ssl_cipher';
 ```
 
