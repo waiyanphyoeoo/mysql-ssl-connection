@@ -123,11 +123,17 @@ To check the SSL status in MySQL, run:
 SHOW VARIABLES LIKE '%ssl%';
 ```
 
-## Create New User with SSL Requirements  
+## Create New User with IP in MySQL   
 Create a new user with SSL requirements for secure connections:
 ```
-CREATE USER 'export-server'@'203.0.113.22' IDENTIFIED BY 'securepassword';
-GRANT ALL PRIVILEGES ON database_name.* TO 'export-server'@'203.0.113.22';
+CREATE USER '<username-1>'@'MySQL Client Server 1 IP' IDENTIFIED BY '<secure-password>';
+GRANT ALL PRIVILEGES ON database_name.* TO '<username-1>'@'MySQL Client Server 1 IP';
+FLUSH PRIVILEGES;
+EXIT;
+```
+```
+CREATE USER '<username-2>'@'MySQL Client Server 2 IP' IDENTIFIED BY '<secure-password>';
+GRANT ALL PRIVILEGES ON database_name.* TO '<username-2>'@'MySQL Client Server 2 IP';
 FLUSH PRIVILEGES;
 EXIT;
 ```
@@ -135,7 +141,10 @@ EXIT;
 ## Enforce SSL on User  
 Enforce SSL for the user:
 ```
-ALTER USER 'export-server'@'203.0.113.22' REQUIRE SSL;
+ALTER USER 'username-1'@'MySQL Client Server 1 IP' REQUIRE SSL;
+```
+```
+ALTER USER 'username-1'@'MySQL Client Server 1 IP' REQUIRE SSL;
 ```
 
 ## Check SSL Requirement for User  
