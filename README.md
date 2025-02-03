@@ -15,3 +15,28 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
 <br>  
 
 ![figure1](https://github.com/waiyanphyoeoo/mysql-ssl-connection/blob/219d0ba2313097f3b05a1dc8b4db49f8ee646784/mysql-ssl-connection.png)
+
+# Table of Contents  
+
+1. [Check OpenSSL Version](#check-openssl-version)  
+2. [MySQL Server Site](#mysql-server-site)  
+3. [Generate SSL Certificates](#generate-ssl-certificates)  
+   - [Generate CA Certificate](#generate-ca-certificate)  
+   - [Generate Server Key and Certificate](#generate-server-key-and-certificate)  
+   - [Generate Client Key and Certificate](#generate-client-key-and-certificate)  
+   - [Set Correct Permissions](#set-correct-permissions)  
+4. [Copy SSL Certificates to Server](#copy-ssl-certificates-to-server)  
+5. [Edit MySQL Configuration](#edit-mysql-configuration)  
+6. [Restart MySQL](#restart-mysql)  
+7. [Verify SSL Status](#verify-ssl-status)  
+8. [Create New User with SSL Requirements](#create-new-user-with-ssl-requirements)  
+9. [Enforce SSL on User](#enforce-ssl-on-user)  
+10. [Check SSL Requirement for User](#check-ssl-requirement-for-user)  
+11. [Allow MySQL Port through UFW](#allow-mysql-port-through-ufw)  
+12. [Check Active Connections with SSL](#check-active-connections-with-ssl)  
+13. [Install mysqlclient for Python](#install-mysqlclient-for-python)  
+14. [Django Database Configuration](#django-database-configuration)  
+15. [Set Permissions for SSL Certificates](#set-permissions-for-ssl-certificates)  
+16. [Test MySQL Connection with SSL](#test-mysql-connection-with-ssl)  
+17. [Grant Privileges for User](#grant-privileges-for-user)  
+
