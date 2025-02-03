@@ -44,3 +44,5 @@ The image illustrates an SSL connection setup between a MySQL server and two MyS
 To check your OpenSSL version, run:  
 ```sh
 openssl version
+
+
